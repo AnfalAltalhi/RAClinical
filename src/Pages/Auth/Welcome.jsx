@@ -2,7 +2,7 @@ import styles from "./Welcome.module.css";
 import hero from "../../assets/Rectangle 1.svg";
 import { useNavigate } from "react-router-dom";
 
-export default function Welcome({  setIsWelcome, setPage }) {
+export default function Welcome({  setIsWelcome }) {
   const navigate = useNavigate();
   return (
     <div className={styles.card}>
@@ -24,10 +24,11 @@ export default function Welcome({  setIsWelcome, setPage }) {
 
          <button
         className={styles.primary}
-        onClick={() => navigate("/auth/register")}
+        onClick={() => navigate("/Register")}
       >
         Create Account
       </button>
+
       
       </div>
     </div>

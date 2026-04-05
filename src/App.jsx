@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import AuthLayout from "./layouts/AuthLayout/AuthLayout";
 import Login from "./Pages/Auth/Login";
-import Register from "./Pages/Auth/Register";
+import Register from "./Pages/Register/Register";
 
 export default function App() {
   return (
@@ -12,9 +12,9 @@ export default function App() {
 
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Login />} />
-          <Route path="register" element={<Register />} />
 
         </Route>
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
