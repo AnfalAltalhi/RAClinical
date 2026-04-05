@@ -1,0 +1,26 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background: #f7f7f7;
+}
+
+.box {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .box {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .box {
+    max-width: 600px;
+  }
+}
