@@ -22,7 +22,7 @@ const doctors = [
 
 export default function PopularDoctors() {
   return (
-    <div className="px-5 pb-28">
+    <div className="pb-6">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-bold text-foreground">Popular Doctors</h2>
         <button className="text-sm text-primary font-medium">See all</button>
