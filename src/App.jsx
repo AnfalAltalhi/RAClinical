@@ -1,33 +1,19 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes,Navigate } from "react-router" 
 
-import AuthLayout from "./layouts/AuthLayout/AuthLayout";
-import Login from "./Pages/Auth/Login";
-import Register from "./Pages/Register/Register";
-import Guard from "./guards/Guard";
-import AdminLayout from "./layouts/AdminLayout/AdminLayout/AdminLayout";
-import Dashboard from "./layouts/AdminLayout/Dashboard/Dashboard";
+function App() {
+  const [count, setCount] = useState(0)
 
-
-export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-
-        <Route path="/" element={<Navigate to="/auth" />} />
-
-        <Route path="/auth" element={<AuthLayout />}>
-          <Route index element={<Login />} />
-        </Route>
-
-        <Route path="/register" element={<Register />} />
-
-        <Route element={<Guard />}>
-          <Route path="/dashboard" element={<AdminLayout />}>
-            <Route index element={<Dashboard />} />
+        <Route element={} >
+          
           </Route>
-        </Route>
 
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
 }
+
+export default App

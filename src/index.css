@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -28,4 +29,27 @@ body {
   .container {
     max-width: 960px;
   }
+=======
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --background: #ffffff;
+  --foreground: #0d1117;
+  --primary: #1a6bbf;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f4f8;
+  --muted: #f0f4f8;
+  --muted-foreground: #6b7280;
+  --border: #e2e8f0;
+  --radius: 0.75rem;
+}
+
+body {
+  font-family: var(--font-inter);
+  background: var(--background);
+  color: var(--foreground);
+>>>>>>> 4c502574498bac528f760118143b8602b0a717f5
 }
