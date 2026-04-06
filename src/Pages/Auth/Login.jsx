@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import Welcome from "./Welcome";
 import hero from "../../assets/hero.svg";
-import { login } from "../../Services/api";
+import { login } from "../../Services/AuthService";
 
 
 
@@ -22,7 +22,7 @@ export default function Login() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors , isSubmitting},
   } = useForm({
     resolver: zodResolver(schema),
   });
@@ -78,7 +78,8 @@ export default function Login() {
   <p className={styles.error}>{errors.password.message}</p>
 )}
 
-          <button type="submit">Login</button>
+          <button type="submit" disabled={isSubmitting}>{
+            isSubmitting ? "Logging in..." : "Login"}</button>
         </form>
       )}
     </main>

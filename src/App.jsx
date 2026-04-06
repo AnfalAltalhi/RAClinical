@@ -4,7 +4,9 @@ import AuthLayout from "./layouts/AuthLayout/AuthLayout";
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Register/Register";
 import Guard from "./guards/Guard";
-import Dashboard from "./Pages/Dashboard/Dashboard";
+import AdminLayout from "./layouts/AdminLayout/AdminLayout/AdminLayout";
+import Dashboard from "./layouts/AdminLayout/Dashboard/Dashboard";
+
 
 export default function App() {
   return (
@@ -19,9 +21,10 @@ export default function App() {
 
         <Route path="/register" element={<Register />} />
 
-        
         <Route element={<Guard />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<AdminLayout />}>
+            <Route index element={<Dashboard />} />
+          </Route>
         </Route>
 
       </Routes>
