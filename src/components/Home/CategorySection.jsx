@@ -33,7 +33,7 @@ const categories = [
 
 export default function CategorySection() {
   return (
-    <div className="px-5 mb-6">
+    <div className="mb-6">
       <h2 className="text-xl font-bold text-foreground mb-5">Categories</h2>
       <div className="flex gap-4">
         {categories.map((cat) => (

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PromoBanner() {
   return (
-    <div className="mx-5 mb-6 rounded-2xl overflow-hidden" style={{ height: 190 }}>
+    <div className="rounded-2xl overflow-hidden" style={{ height: 220 }}>
       <div className="relative w-full h-full flex">
         {/* Left blue section */}
         <div
