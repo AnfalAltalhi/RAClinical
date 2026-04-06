@@ -1,15 +1,11 @@
-import { BrowserRouter, Route, Routes,Navigate } from "react-router" 
+import { BrowserRouter, Route, Routes, Navigate } from "react-router"
+import Home from "./pages/Home"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={} >
-          
-          </Route>
-
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
