@@ -6,13 +6,13 @@ import Guard from "./guards/Guard";
 import AdminLayout from "./layouts/AdminLayout/AdminLayout/AdminLayout";
 import Dashboard from "./layouts/AdminLayout/Dashboard/Dashboard";
 import Home from "./pages/Home"
+import ClientLayout from "./layouts/ClientLayout/ClientLayout";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/auth" replace />} />
 
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Login />} />
@@ -25,6 +25,10 @@ export default function App() {
             <Route index element={<Dashboard />} />
           </Route>
         {/* </Route> */}
+
+        <Route path="/client" element={<ClientLayout />}>
+            <Route index element={<Home />} />
+          </Route>
 
       </Routes>
     </BrowserRouter>
