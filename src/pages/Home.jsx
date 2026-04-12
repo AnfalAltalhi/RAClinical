@@ -1,9 +1,9 @@
 import React from "react";
-import HomeHeader from "../components/home/HomeHeader";
-import HomeSearch from "../components/home/HomeSearch";
+import HomeHeader from "../components/Home/HomeHeader";
+import HomeSearch from "../components/Home/HomeSearch";
 import PromoBanner from "../components/Home/PromoBanner";
-import CategorySection from "../components/home/CategorySection";
-import PopularDoctors from "../components/home/PopularDoctors";
+import CategorySection from "../components/Home/CategorySection";
+import PopularDoctors from "../components/Home/PopularDoctors";
 import Sidebar from "../components/Home/Sidebar.jsx";
 
 export default function Home() {

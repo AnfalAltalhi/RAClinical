@@ -14,19 +14,17 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" replace />} />
 
-        <Route path="/" element={<Navigate to="/auth" />} />
-
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Login />} />
         </Route>
 
         <Route path="/register" element={<Register />} />
 
-        <Route element={<Guard />}>
+        {/* <Route element={<Guard />}> */}
           <Route path="/dashboard" element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
           </Route>
-        </Route>
+        {/* </Route> */}
 
       </Routes>
     </BrowserRouter>
