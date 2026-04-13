@@ -92,3 +92,29 @@ button {
   width: 120px;
   height: auto;
 }
+.registerBox {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.registerText {
+  white-space: nowrap;
+}
+
+.registerLink {
+  color: #1a9e8a;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.registerLink:hover {
+  text-decoration: underline;
+  color: #157f70;
+}
