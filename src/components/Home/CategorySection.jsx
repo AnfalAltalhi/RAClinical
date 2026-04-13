@@ -21,37 +21,39 @@ export default function CategorySection() {
       <h2 style={{ fontSize: "18px", fontWeight: "700", color: "#1f2937", marginBottom: "20px" }}>
         Categories
       </h2>
-      <div style={{ display: "flex", gap: "16px" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
         {categories.map((cat) => (
           <button
             key={cat.name}
             style={{
               display: "flex",
-              flexDirection: "column",
               alignItems: "center",
-              gap: "12px",
-              background: "transparent",
-              border: "none",
-              cursor: "pointer",
-              padding: 0,
-            }}
-            onMouseEnter={e => e.currentTarget.querySelector(".icon-wrap").style.transform = "scale(1.08)"}
-            onMouseLeave={e => e.currentTarget.querySelector(".icon-wrap").style.transform = "scale(1)"}
-          >
-            <div className="icon-wrap" style={{
-              width: "90px",
-              height: "90px",
-              borderRadius: "50%",
+              gap: "14px",
               background: cat.bg,
+              border: "none",
+              borderRadius: "16px",
+              padding: "14px 16px",
+              cursor: "pointer",
+              width: "100%",
+              transition: "transform 0.2s",
+            }}
+            onMouseEnter={e => e.currentTarget.style.transform = "scale(1.02)"}
+            onMouseLeave={e => e.currentTarget.style.transform = "scale(1)"}
+          >
+            <div style={{
+              width: "48px",
+              height: "48px",
+              borderRadius: "50%",
+              background: "white",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              transition: "transform 0.2s",
+              flexShrink: 0,
               boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
             }}>
-              <cat.icon style={{ width: "36px", height: "36px", color: cat.iconColor }} />
+              <cat.icon style={{ width: "24px", height: "24px", color: cat.iconColor }} />
             </div>
-            <span style={{ fontSize: "13px", fontWeight: "600", color: "#4b5563", textAlign: "center" }}>
+            <span style={{ fontSize: "14px", fontWeight: "600", color: "#374151" }}>
               {cat.name}
             </span>
           </button>
