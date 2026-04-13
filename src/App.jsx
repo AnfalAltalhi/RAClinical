@@ -1,18 +1,18 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import AuthLayout from "./layouts/AuthLayout/AuthLayout";
+import AuthLayout from "./Pages/AuthLayout/AuthLayout";
 import Login from "./Pages/Auth/Login";
 import Register from "./Pages/Register/Register";
 import Guard from "./guards/Guard";
 import AdminLayout from "./layouts/AdminLayout/AdminLayout/AdminLayout";
-import Dashboard from "./layouts/AdminLayout/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import Home from "./pages/Home"
+import ClientLayout from "./Pages/ClientLayout/ClientLayout";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/auth" replace />} />
 
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Login />} />
@@ -25,6 +25,10 @@ export default function App() {
             <Route index element={<Dashboard />} />
           </Route>
         {/* </Route> */}
+
+        <Route path="/client" element={<ClientLayout />}>
+            <Route index element={<Home />} />
+          </Route>
 
       </Routes>
     </BrowserRouter>

@@ -3,20 +3,45 @@ import { Bell, MapPin } from "lucide-react";
 
 export default function HomeHeader({ userName = "Raneem", location = "SA, Taif 26711" }) {
   return (
-    <div className="flex items-center gap-4">
-      <button className="relative w-10 h-10 flex items-center justify-center">
-        <Bell className="w-6 h-6 text-muted-foreground" strokeWidth={1.5} />
-        <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white" />
+    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+      <button style={{
+        position: "relative",
+        background: "transparent",
+        border: "none",
+        cursor: "pointer",
+        padding: "4px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+        <Bell style={{ width: "22px", height: "22px", color: "#6b7280" }} strokeWidth={1.5} />
+        <span style={{
+          position: "absolute", top: "4px", right: "4px",
+          width: "8px", height: "8px",
+          background: "#ef4444",
+          borderRadius: "50%",
+          border: "2px solid white",
+        }} />
       </button>
-      <div className="flex items-center gap-2">
-        <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">
+
+      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <div style={{
+          width: "38px", height: "38px",
+          borderRadius: "50%",
+          background: "#1b4f72",
+          display: "flex", alignItems: "center", justifyContent: "center",
+          color: "white", fontWeight: "700", fontSize: "16px",
+          flexShrink: 0,
+        }}>
           {userName[0]}
         </div>
         <div>
-          <p className="text-sm font-semibold text-foreground leading-none">{userName}</p>
-          <div className="flex items-center gap-1 mt-0.5">
-            <MapPin className="w-3 h-3 text-muted-foreground" />
-            <span className="text-xs text-muted-foreground">{location}</span>
+          <p style={{ fontSize: "14px", fontWeight: "700", color: "#1f2937", margin: 0 }}>
+            {userName}
+          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: "3px", marginTop: "2px" }}>
+            <MapPin style={{ width: "11px", height: "11px", color: "#9ca3af" }} />
+            <span style={{ fontSize: "11px", color: "#9ca3af" }}>{location}</span>
           </div>
         </div>
       </div>

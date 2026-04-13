@@ -2,77 +2,92 @@ import React from "react";
 
 export default function PromoBanner() {
   return (
-    <div className="rounded-2xl overflow-hidden" style={{ height: 220 }}>
-      <div className="relative w-full h-full flex">
-        {/* Left blue section */}
-        <div
-          className="relative flex flex-col justify-between p-4 z-10"
-          style={{
-            width: "55%",
-            background: "linear-gradient(135deg, #1a4a7a 0%, #1e5fa0 60%, #2a7bbf 100%)",
-          }}
-        >
-          {/* Diagonal cut on the right side */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(135deg, #1a4a7a 0%, #1e5fa0 60%, #2a7bbf 100%)",
-              clipPath: "polygon(0 0, 85% 0, 100% 100%, 0 100%)",
-            }}
-          />
+    <div style={{
+      borderRadius: "24px",
+      overflow: "hidden",
+      height: "200px",
+      position: "relative",
+      marginBottom: "24px",
+      background: "linear-gradient(135deg, #0f4c75 0%, #1b6ca8 50%, #2389d4 100%)",
+    }}>
 
-          <div className="relative z-10">
-            <p className="text-[9px] font-semibold text-white/70 uppercase tracking-widest mb-1">
-              Fauget Hospital
-            </p>
-            <div className="mb-1">
-              <p className="text-[11px] font-medium text-cyan-300 uppercase tracking-wider">Medical</p>
-              <p className="text-2xl font-black text-cyan-300 uppercase leading-tight">CHECK-UP</p>
-            </div>
-            <p className="text-[8px] text-white/60 leading-relaxed mb-3" style={{ maxWidth: 130 }}>
-              Regular medical check-ups are an important aspect of maintaining good health. They allow doctors to detect any potential health issues early on and provide appropriate treatment before they become more serious.
-            </p>
-            <button className="bg-primary text-white text-[10px] font-bold px-4 py-1.5 rounded-md">
-              Check Now
-            </button>
-          </div>
+      {/* Wave shape */}
+      <svg viewBox="0 0 500 200" preserveAspectRatio="none"
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.15 }}>
+        <path d="M0,100 C100,20 200,180 300,80 C400,-20 450,120 500,60 L500,200 L0,200 Z" fill="white" />
+      </svg>
 
-          {/* Decorative dots */}
-          <div className="absolute bottom-3 left-3 grid grid-cols-4 gap-0.5 z-10">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="w-1 h-1 rounded-full bg-white/30" />
-            ))}
-          </div>
+      {/* Circle decorations */}
+      <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "200px", height: "200px", borderRadius: "50%", background: "rgba(255,255,255,0.07)" }} />
+      <div style={{ position: "absolute", bottom: "-60px", right: "120px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(255,255,255,0.05)" }} />
 
-          {/* FREE CHECK badge */}
-          <div
-            className="absolute z-20 flex items-center justify-center"
-            style={{ right: -18, bottom: 28, width: 52, height: 52 }}
-          >
-            <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
-              <div className="text-center">
-                <p className="text-[8px] font-black text-white leading-none">FREE</p>
-                <p className="text-[8px] font-black text-white leading-none">CHECK</p>
-              </div>
-            </div>
-          </div>
+      {/* Doctor image */}
+      <img
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop&crop=top"
+       style={{
+          position: "absolute",
+          right: 0,
+          bottom: 0,
+          height: "100%",
+          width: "45%",
+          objectFit: "cover",
+          objectPosition: "bottom center",
+          maskImage: "linear-gradient(to left, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0))",
+          WebkitMaskImage: "linear-gradient(to left, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0))",
+        }}
+      />
+
+      {/* Content */}
+      <div style={{ position: "relative", zIndex: 2, padding: "24px 28px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", maxWidth: "60%" }}>
+        <div style={{ display: "inline-flex", alignItems: "center", background: "rgba(255,255,255,0.15)", borderRadius: "20px", padding: "4px 12px", marginBottom: "10px", width: "fit-content" }}>
+          <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.9)", fontWeight: "600", letterSpacing: "1px", textTransform: "uppercase" }}>
+            Fauget Hospital
+          </span>
         </div>
 
-        {/* Right image section */}
-        <div className="flex-1 relative">
-          <img
-            src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=400&h=400&fit=crop&crop=center"
-            alt="Medical professional"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Decorative dots top right */}
-          <div className="absolute top-3 right-3 grid grid-cols-4 gap-0.5">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="w-1 h-1 rounded-full bg-white/60" />
-            ))}
-          </div>
-        </div>
+        <p style={{ fontSize: "12px", color: "#93d4f7", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 4px" }}>
+          Medical
+        </p>
+        <p style={{ fontSize: "30px", fontWeight: "900", color: "white", textTransform: "uppercase", lineHeight: 1, margin: "0 0 10px" }}>
+          CHECK-UP
+        </p>
+        <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.65)", lineHeight: 1.6, margin: "0 0 16px" }}>
+          Early detection saves lives. Book your free check-up today.
+        </p>
+
+        <button style={{
+          background: "white",
+          color: "#0f4c75",
+          border: "none",
+          borderRadius: "12px",
+          padding: "9px 20px",
+          fontSize: "12px",
+          fontWeight: "700",
+          cursor: "pointer",
+          width: "fit-content",
+          boxShadow: "0 4px 14px rgba(0,0,0,0.15)",
+        }}>
+          Book Free Check-up →
+        </button>
       </div>
+
+      {/* FREE badge */}
+      <div style={{
+        position: "absolute",
+        top: "16px",
+        right: "46%",
+        background: "#f59e0b",
+        color: "white",
+        borderRadius: "20px",
+        padding: "4px 10px",
+        fontSize: "10px",
+        fontWeight: "800",
+        zIndex: 3,
+        boxShadow: "0 2px 8px rgba(245,158,11,0.4)",
+      }}>
+        FREE
+      </div>
+
     </div>
   );
 }
