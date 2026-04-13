@@ -1,11 +1,8 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
-export default function AdminGuard() {
-  const role = localStorage.getItem("role");
+const AdminGuard = () => {
+  return <Outlet />; // 🔥 تعطيله مؤقت
+};
 
-  if (role !== "admin") {
-    return <Navigate to="/" replace />;
-  }
-
-  return <Outlet />;
-}
+export default AdminGuard;

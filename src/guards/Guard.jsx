@@ -1,4 +1,4 @@
-import { Outlet, Navigate } from "react-router"
+import { Outlet, Navigate } from "react-router-dom";
 import { jwtDecode } from 'jwt-decode'
 
 const decodeToken = (token) => {
@@ -14,7 +14,7 @@ const decodeToken = (token) => {
 const Guard = () => {
   const token = localStorage.getItem('token');
   const isTokenValid = () => {
-    if (!token) return false;
+    if (!token) return true;
     const decoded = decodeToken(token);
     if (!decoded || !decoded.exp) return false;
     const currentTime = Math.floor(new Date().getTime() / 1000);
@@ -28,7 +28,7 @@ const Guard = () => {
   };
 
 
-  return isTokenValid() ? <Outlet /> : <Navigate to="/" />;
+  return isTokenValid() ? <Outlet /> : <Navigate to="/auth" replace />;
 };
 
 

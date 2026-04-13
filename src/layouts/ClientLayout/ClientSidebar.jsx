@@ -1,7 +1,6 @@
 import React from "react";
 import { Home, Calendar, MessageCircle, User, Heart, Settings, LogOut } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
-
+import { Link, useLocation, useNavigate } from "react-router-dom"; 
 const navItems = [
   { icon: Home, label: "Home", path: "/" },
   { icon: Calendar, label: "Appointments", path: "/appointments" },
@@ -12,9 +11,17 @@ const navItems = [
 
 export default function ClientSidebar () {
   const location = useLocation();
+  const navigate = useNavigate(); // 
+
+ 
+  const handleLogout = () => {
+    localStorage.removeItem("token"); 
+    navigate("/auth"); 
+  };
 
   return (
     <div className="w-64 bg-white border-r border-gray-100 min-h-screen flex flex-col py-8 px-4 flex-shrink-0">
+      
       {/* Logo */}
       <div className="px-3 mb-10">
         <h1 className="text-2xl font-black text-primary">RAClinical</h1>
@@ -51,10 +58,15 @@ export default function ClientSidebar () {
           <Settings className="w-5 h-5" strokeWidth={1.8} />
           Settings
         </Link>
-        <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-red-400 hover:bg-red-50 transition-colors">
-          <LogOut className="w-5 h-5" strokeWidth={1.8} />
-          Log Out
-        </button>
+
+       
+        <button
+  onClick={() => {
+    console.log("CLICKED 🔥");
+  }}
+>
+  Log Out
+</button>
       </div>
     </div>
   );

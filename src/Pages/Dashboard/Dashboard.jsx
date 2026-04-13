@@ -2,44 +2,61 @@ import styles from "./Dashboard.module.css";
 
 export default function Dashboard() {
   return (
-    <div>
-      <h2>إحصائيات عامة</h2>
+    <div className={styles.dashboard}>
+      <h2 className={styles.title}>Dashboard Overview</h2>
 
       <div className={styles.cards}>
         <div className={styles.card}>
-          <p>الإيرادات الشهرية</p>
-          <h3>150,590</h3>
+          <p>Monthly Revenue</p>
+          <h3>$150,590</h3>
         </div>
 
         <div className={styles.card}>
-          <p>الحجوزات اليومية</p>
+          <p>Daily Bookings</p>
           <h3>3,590</h3>
         </div>
 
         <div className={styles.card}>
-          <p>عدد الأخصائيين</p>
+          <p>Total Doctors</p>
           <h3>156</h3>
         </div>
 
         <div className={styles.card}>
-          <p>عدد العيادات</p>
+          <p>Total Clinics</p>
           <h3>55</h3>
         </div>
       </div>
 
       <div className={styles.table}>
-        <h3>الحجوزات اليومية</h3>
+        <h3>Recent Bookings</h3>
+
         <table>
           <thead>
             <tr>
-              <th>التاريخ</th>
-              <th>اسم المستفيد</th>
-              <th>رقم الجوال</th>
-              <th>العيادة</th>
-              <th>الحالة</th>
+              <th>Date</th>
+              <th>Patient Name</th>
+              <th>Phone</th>
+              <th>Clinic</th>
+              <th>Status</th>
             </tr>
           </thead>
+
           <tbody>
+            <tr>
+              <td>2025-01-01</td>
+              <td>John Doe</td>
+              <td>+966 512345678</td>
+              <td>Dental Clinic</td>
+              <td className={styles.active}>Completed</td>
+            </tr>
+
+            <tr>
+              <td>2025-01-02</td>
+              <td>Sarah Ali</td>
+              <td>+966 598765432</td>
+              <td>Skin Clinic</td>
+              <td className={styles.pending}>Pending</td>
+            </tr>
           </tbody>
         </table>
       </div>
