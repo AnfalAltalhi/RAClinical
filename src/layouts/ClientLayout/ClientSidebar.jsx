@@ -10,7 +10,7 @@ const navItems = [
   { icon: User, label: "Profile", path: "/profile" },
 ];
 
-export default function Sidebar() {
+export default function ClientSidebar () {
   const location = useLocation();
 
   return (
