@@ -28,16 +28,25 @@ export default function Login() {
   });
 
   const onSubmit = async (data) => {
-    try {
-      const Response = await login(data);
+  try {
+    const Response = await login(data);
 
-      localStorage.setItem("token", Response.token);
+    localStorage.setItem("token", Response.token);
 
+    const role = Response.role || "client";
+    localStorage.setItem("role", role);
+
+  
+    if (role === "admin") {
       navigate("/dashboard");
-    } catch (error) {
-      console.error("Login failed:", error);
+    } else {
+      navigate("/client");
     }
-  };
+
+  } catch (error) {
+    console.error("Login failed:", error);
+  }
+};
 
   return (
     <main className={styles.main}>

@@ -7,42 +7,38 @@ import PopularDoctors from "../components/Home/PopularDoctors";
 
 export default function Home() {
   return (
-    <div style={{ minHeight: "100vh", background: "#f8fafc", display: "flex" }}>
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
-
+    <div className="min-h-screen bg-gray-50 font-inter flex w-100">
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col min-h-screen w-100">
         {/* Top Bar */}
-        <div style={{
-          background: "white",
-          borderBottom: "1px solid #f1f5f9",
-          padding: "12px 20px",
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
-          display: "flex",
-          alignItems: "center",
-          gap: "12px",
-        }}>
-          <HomeSearch />
-          <div style={{ flexShrink: 0 }}>
-            <HomeHeader userName="Raneem" location="SA, Taif 26711" />
+        <div className="bg-white border-b border-gray-100 px-8 py-4">
+          <div className="w-full flex items-center gap-6">
+            <div className="flex-1">
+              <HomeSearch />
+            </div>
+            <div className="flex-shrink-0">
+              <HomeHeader userName="Raneem" location="SA, Taif 26711" />
+            </div>
           </div>
         </div>
 
         {/* Page Body */}
-        <div style={{ flex: 1, padding: "24px 28px" }}>
-          <PromoBanner />
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 2fr",
-            gap: "24px",
-            alignItems: "start",
-            marginTop: "24px",
-          }}>
-            <CategorySection />
-            <PopularDoctors />
+        <div className="flex-1 px-8 py-6 w-full">
+          {/* Promo Banner */}
+          <div className="mb-8">
+            <PromoBanner />
+          </div>
+
+          {/* Categories + Doctors Grid */}
+          <div className="grid grid-cols-3 gap-8">
+            <div className="col-span-1">
+              <CategorySection />
+            </div>
+            <div className="col-span-2">
+              <PopularDoctors />
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   );
